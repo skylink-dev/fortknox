@@ -19,6 +19,7 @@ import Banner from "@/components/section/Banner";
 import DynamicGrid from "@/components/section/DynamicGrid";
 import ImageCta from "@/components/section/ImageCta";
 import MultiTabCard from "@/components/section/MultiTabCard";
+import ContactUs from '@/components/section/ContactUs'
 
 export default function DynamicComponent({ data, id }) {
     switch (data.code) {
@@ -64,6 +65,8 @@ export default function DynamicComponent({ data, id }) {
             return <><FourIcon key={id} data={data}></FourIcon></>
         case "pricingplan":
             return <><PricingPlan key={id} data={data}></PricingPlan></>
+        case "contactus":
+            return <><ContactUs key={id} data={data}></ContactUs></>
         default:
             return null;
     }
