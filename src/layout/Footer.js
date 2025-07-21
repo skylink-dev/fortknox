@@ -18,6 +18,7 @@ const MondayFooter = () => {
       .then((res) => {
         const filteredMenus = res.data.filter((menu) => menu.slug !== 'header');
         setFooterSections(filteredMenus);
+        console.log(filteredMenus);
       })
       .catch((err) => {
         console.error('Failed to load footer menus:', err);
@@ -29,21 +30,16 @@ const MondayFooter = () => {
       <div className="container mx-auto">
       <div className="flex p-2 m-0 justify-between flex-wrap">
         {/* Logo and Primary Links */}
-        <div>
-          <div className="p-2 cursor-pointer">
-            <Image src="/assets/fortnox_logo.png" width={150} height={50} alt="Logo" style={{ width: '150px' }} />
-          </div>
-          {['Pricing', 'Contact us', 'Templates', 'SMB', 'Enterprise', 'Nonprofits', 'Add marketplace', '24/7 support'].map((item, idx) => (
-            <div key={idx} className="p-2 text-gray-800 hover:text-blue-800 cursor-pointer">
-              {item}
-            </div>
-          ))}
-        </div>
-
+        
         {/* API-driven dynamic sections */}
         {footerSections.map((section) => (
           <div key={section.id}>
+            {section.title=="image"?(<div className="p-2 cursor-pointer">
+            <Image src="/assets/fortnox_logo.png" width={150} height={50} alt="Logo" style={{ width: '150px' }} />
+          </div>):(
             <div className="p-2 text-gray-900 font-semibold">{section.title}</div>
+          )}
+            
             {section.submenus?.map((item) => (
               <div
                 key={item.id}
