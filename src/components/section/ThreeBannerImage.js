@@ -11,6 +11,7 @@ export default function ThreeBannerImage({data}) {
             setImage2(data?.cards[1]?.image);
             setImage3(data?.cards[2]?.image)
         }
+        console.log("Three Banner Image")
         console.log(data)
     },[data])
 

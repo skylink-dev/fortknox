@@ -19,11 +19,10 @@ import Banner from "@/components/section/Banner";
 import DynamicGrid from "@/components/section/DynamicGrid";
 import ImageCta from "@/components/section/ImageCta";
 import MultiTabCard from "@/components/section/MultiTabCard";
-<<<<<<< HEAD
 import VideoBanner from '@/components/section/VideoBanner'
-=======
+
 import ContactUs from '@/components/section/ContactUs'
->>>>>>> 863910cc1bda812875bffd87fc7f482e104c96b8
+import DataCenterHero from '@/components/HeroComponent'
 
 export default function DynamicComponent({ data, id }) {
     switch (data.code) {
@@ -73,6 +72,8 @@ export default function DynamicComponent({ data, id }) {
             return <><PricingPlan key={id} data={data}></PricingPlan></>
         case "contactus":
             return <><ContactUs key={id} data={data}></ContactUs></>
+        case "datacenterhero":
+            return <><DataCenterHero key={id} data={data}></DataCenterHero></>
         default:
             return null;
     }
