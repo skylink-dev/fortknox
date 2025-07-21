@@ -3,8 +3,8 @@ import { cardData } from '@/data/home';
 import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
 
-export default function MultiTabCard({cardsData = [] }) {
-  const tabs = cardsData.map(card => card.title);
+export default function MultiTabCard({cardsData}) {
+  const tabs = cardsData.cards.map(card => card.title);
   const [activeTab, setActiveTab] = useState(tabs[0]);
   useEffect(() => {
     if (tabs.length && !tabs.includes(activeTab)) {
@@ -12,19 +12,18 @@ export default function MultiTabCard({cardsData = [] }) {
     }
   }, [tabs]);
 
-  const activeCard = cardsData.find(card => card.title === activeTab);
+  const activeCard = cardsData.cards.find(card => card.title === activeTab);
   const subcards = activeCard?.subcards || [];
-  console.log(subcards);
   return (
     <div className="w-full px-4 py-14 bg-gray-50">
       <div className="container mx-auto">
         {/* Section Title */}
         <div className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-2">
-            Innovative, Trustworthy, and Secure Products and Services
+           {cardsData.title}
           </h2>
           <p className="text-gray-600 text-sm md:text-base">
-            Discover scalable, secure, and high-performance services tailored to every business need.
+            {cardsData.description}
           </p>
         </div>
 
@@ -53,13 +52,13 @@ export default function MultiTabCard({cardsData = [] }) {
                 key={card.id}
                 className="bg-white rounded-2xl shadow-md hover:shadow-lg transition overflow-hidden flex flex-col items-center text-center px-6 py-12"
               >
-                <div className="w-12 h-12 mb-4">
+                <div className="w-30 h-30 mb-4">
                   <Image
                     src={card.image}
                     alt={card.title}
-                    width={46}
-                    height={46}
-                    className="w-full h-full object-contain"
+                    width={1200}
+                    height={1200}
+                    className="w-full h-full"
                   />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">{card.title}</h3>

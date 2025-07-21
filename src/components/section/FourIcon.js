@@ -15,8 +15,6 @@ const getIcon=(text)=>{
       return  <CloudDoneIcon className="!w-12 !h-12 text-purple-600" />;
     case "elasticstorage":
       return  <StorageIcon className="!w-12 !h-12 text-orange-600" />;
-    
-  
     default:
       break;
   }

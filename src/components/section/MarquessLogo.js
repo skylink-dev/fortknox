@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 export default function MarquessLogo({data = [] }) {
-  const logoItems = data?.[0]?.subcards || [];
+  const logoItems = data || [];
   if (!logoItems.length) return null;
   return (
     <div className="bottom-0 left-0 w-full bg-gray-100 py-4 backdrop-blur-[5px] overflow-hidden">

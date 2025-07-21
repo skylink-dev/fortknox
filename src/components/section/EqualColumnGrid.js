@@ -2,7 +2,7 @@
 import React from 'react';
 
 export default function EqualColumnGrid({data}) {
-  const gridContent = data.cards?.find(item => item.subcards)?.subcards || [];
+  const gridContent = data.cards;
   return (
     <section className="py-12">
       <div className="container mx-auto px-4">

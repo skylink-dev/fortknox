@@ -13,7 +13,7 @@ export default function DynamicGrid3() {
                     <div className="bottom-block-text">Brighter flash</div>
                 </div>
                 <div className="skyplay-grid-block">
-                    <div className="bottom-block-text">2.2" and 9.1"</div>
+                    <div className="bottom-block-text">2.2 inch and 9.1inch</div>
                 </div>
                 <div className="skyplay-grid-block">
                     <Image src="/assets/sample-image-1.jpg" alt="test" width={100} height={100} />

@@ -19,17 +19,20 @@ import Banner from "@/components/section/Banner";
 import DynamicGrid from "@/components/section/DynamicGrid";
 import ImageCta from "@/components/section/ImageCta";
 import MultiTabCard from "@/components/section/MultiTabCard";
+import VideoBanner from '@/components/section/VideoBanner'
 
 export default function DynamicComponent({ data, id }) {
     switch (data.code) {
         case 'banner':
             return <Banner key={id} data={data} />;
         case 'multitab':
-            return <MultiTabCard key={id} cardsData={data.cards} />;
+            return <MultiTabCard key={id} cardsData={data} />;
         case 'grid':
-            return <DynamicGrid key={id} data={data.cards} />;
+            return <DynamicGrid key={id} data={data} />;
         case 'imagecta':
             return <ImageCta key={id} data={data} />;
+        case 'videobanner':
+            return <VideoBanner key={id} data={data}></VideoBanner>;
         case 'innerbanner':
             return <InnerBanner key={id} slides={data.cards}></InnerBanner>
         case 'marquesslogo':
@@ -37,7 +40,7 @@ export default function DynamicComponent({ data, id }) {
         case 'dynamicgrid2':
             return <DynamicGrid2 key={id} data={data}></DynamicGrid2>
         case 'portfoliogrid':
-            return <PortfolioGrid key={id} ></PortfolioGrid>
+            return <PortfolioGrid key={id} data={data}></PortfolioGrid>
         case 'equalcolumngrid':
             return <EqualColumnGrid key={id} data={data}></EqualColumnGrid>
         case 'newsletter':

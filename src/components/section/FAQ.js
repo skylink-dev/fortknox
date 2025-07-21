@@ -5,16 +5,17 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function FAQ({data}) {
 
-  if(data==undefined||data==null) return null;
-  const [activeIndex, setActiveIndex] = useState(null);
-  const [questionData,setQuestionData]=useState([])
-  const toggleFAQ = (index) => {
-    setActiveIndex(activeIndex === index ? null : index);
-  };
-  useEffect(()=>{
-    setQuestionData(data?.cards)
-  },[data])
-  if(data==undefined&&data!=[]) return null;
+const [activeIndex, setActiveIndex] = useState(null);
+  const [questionData, setQuestionData] = useState([]);
+
+  useEffect(() => {
+    if (data?.cards) {
+      setQuestionData(data.cards);
+    }
+  }, [data]);
+
+  // Safe early return after hooks are declared
+  if (!data || !Array.isArray(data.cards)) return null;
 
   return (
     <div className="max-w-3xl md:max-w-full md:m-20 mx-auto px-4 py-8 p-2 md:p-6 bg-gray-100 rounded-2xl">

@@ -3,7 +3,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 export default function HalfShowCarousel({ slides = [] }) {
-  const slidescontent = slides?.find(item => item.subcards)?.subcards || [];
+  const slidescontent = slides;
   const baseSlides = slidescontent;
  const loopSlides = baseSlides.length > 1
     ? [baseSlides[baseSlides.length - 1], ...baseSlides, baseSlides[0]]
