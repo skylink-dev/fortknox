@@ -22,7 +22,7 @@ import MultiTabCard from "@/components/section/MultiTabCard";
 import VideoBanner from '@/components/section/VideoBanner'
 
 import ContactUs from '@/components/section/ContactUs'
-import DataCenterHero from '@/components/HeroComponent'
+
 
 export default function DynamicComponent({ data, id }) {
     switch (data.code) {
