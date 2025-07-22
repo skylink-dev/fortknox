@@ -60,7 +60,7 @@ export default function ContactUs() {
             {submitSuccess ? (
               <div className="bg-green-100 border border-green-400 text-green-700 p-4 rounded mb-6">
                 <p className="font-bold">Thank you!</p>
-                <p>We'll get back to you soon.</p>
+                <p>We will get back to you soon.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
@@ -194,7 +194,7 @@ export default function ContactUs() {
             
             <div className="container mx-auto px-4 text-center relative z-10">
                 <h1 className="text-4xl font-bold mb-4 animate-text-pop">Contact Us</h1>
-                <p className="text-xl animate-text-fade">We'd love to hear from you!</p>
+                <p className="text-xl animate-text-fade">We did love to hear from you!</p>
             </div>
             </div>
 

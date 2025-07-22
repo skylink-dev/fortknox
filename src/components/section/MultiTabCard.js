@@ -50,15 +50,15 @@ export default function MultiTabCard({cardsData}) {
             {subcards.map((card) => (
               <div
                 key={card.id}
-                className="bg-white rounded-2xl shadow-md hover:shadow-lg transition overflow-hidden flex flex-col items-center text-center px-6 py-12"
+                className="bg-white rounded-2xl shadow-md hover:shadow-lg transition overflow-hidden flex flex-col items-center text-center px-7 py-7"
               >
-                <div className="w-30 h-30 mb-4">
+                <div className="w-55 h-35 mb-2">
                   <Image
                     src={card.image}
                     alt={card.title}
                     width={1200}
                     height={1200}
-                    className="w-full h-full"
+                    className="w-full object-contain h-full"
                   />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">{card.title}</h3>
