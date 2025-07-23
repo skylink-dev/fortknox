@@ -258,6 +258,31 @@ section#image-cta-section .content-wrap {
   position: relative;
   overflow: hidden;
 }
+.card-gradient {
+    position: relative;
+}
+.card-gradient div.relative{
+  position: relative;
+  z-index: 9;
+}
+.card-gradient:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 60%;
+    background: linear-gradient(  to top,  black 0%,  black 15%,  rgba(255, 255, 255, 0) 100%);
+    left: 0px;
+    bottom: 0px;
+    border-radius: 15px;
+    z-index: 0;
+}
+#technical-specs svg[stroke="currentColor"] {
+    color: red;
+}
+#technical-specs ul li svg[stroke="currentColor"]
+{
+  color:#0a5eb5;
+}
 @media (max-width: 767px) {
   footer .flex.flex-row.align-middle.justify-around {
     flex-direction: column;

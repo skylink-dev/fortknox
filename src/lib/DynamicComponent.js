@@ -20,8 +20,12 @@ import DynamicGrid from "@/components/section/DynamicGrid";
 import ImageCta from "@/components/section/ImageCta";
 import MultiTabCard from "@/components/section/MultiTabCard";
 import VideoBanner from '@/components/section/VideoBanner'
-
 import ContactUs from '@/components/section/ContactUs'
+import IconCard2 from '@/components/section/IconCard2'
+import PricingPlansTable from '@/components/section/PricingPlanTable'
+import DataCenterHero from '@/components/HeroComponent'
+import TechnicalSpecs from '@/components/TechnicalSpecs'
+import DataCenterTestimonials from '@/components/DataCenterTestimonials'
 
 
 export default function DynamicComponent({ data, id }) {
@@ -74,6 +78,14 @@ export default function DynamicComponent({ data, id }) {
             return <><ContactUs key={id} data={data}></ContactUs></>
         case "datacenterhero":
             return <><DataCenterHero key={id} data={data}></DataCenterHero></>
+        case "iconcard2":
+            return <IconCard2></IconCard2>
+        case "pricingplantable":
+            return <PricingPlansTable></PricingPlansTable>
+        case "technicalspecs":
+            return <TechnicalSpecs></TechnicalSpecs>
+        case "datacentertestimonials":
+            return <DataCenterTestimonials></DataCenterTestimonials>
         default:
             return null;
     }

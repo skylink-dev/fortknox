@@ -1,4 +1,4 @@
-// components/TechnicalSpecs.js
+'use client'
 import React from 'react';
 import { motion } from 'framer-motion';
 
@@ -16,7 +16,7 @@ const specs = [
       '72-hour fuel supply',
       'Dual grid power feeds'
     ],
-    color: 'bg-gradient-to-br from-yellow-500 to-yellow-600'
+    color: 'bg-gradient-to-br from-red-500 to-red-600'
   },
   { 
     category: 'Cooling', 
@@ -31,7 +31,7 @@ const specs = [
       '25°C optimized environment',
       'Waterless fire suppression'
     ],
-    color: 'bg-gradient-to-br from-blue-500 to-blue-600'
+    color: 'bg-gradient-to-br from-red-500 to-red-600'
   },
   { 
     category: 'Security', 
@@ -61,7 +61,7 @@ const specs = [
       'Diverse fiber paths',
       '<1ms latency to major IXPs'
     ],
-    color: 'bg-gradient-to-br from-green-500 to-green-600'
+    color: 'bg-gradient-to-br from-red-500 to-red-600'
   }
 ];
 
@@ -76,24 +76,24 @@ const certifications = [
 
 const TechnicalSpecs = () => {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+    <section className="py-12 px-4 sm:px-6 lg:px-8 bg-gray-50" id="technical-specs">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-8"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Technical <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Specifications</span>
+            Technical <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-600">Specifications</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Enterprise-grade infrastructure built for maximum reliability and performance
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
           {specs.map((spec, index) => (
             <motion.div
               key={index}
@@ -102,7 +102,7 @@ const TechnicalSpecs = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
               whileHover={{ y: -5 }}
-              className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
+              className="bg-white rounded-xl overflow-hidden duration-300"
             >
               <div className={`${spec.color} h-2 w-full`}></div>
               <div className="p-6">
@@ -130,9 +130,9 @@ const TechnicalSpecs = () => {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="bg-white rounded-2xl shadow-lg overflow-hidden"
+          className="bg-white rounded-xl shadow-lg overflow-hidden"
         >
-          <div className="bg-gradient-to-r from-gray-900 to-gray-800 p-8 text-white">
+          <div className="bg-gradient-to-r from-red-800 to-red-600 p-8 text-white">
             <h3 className="text-2xl font-bold mb-2">Compliance & Certifications</h3>
             <p className="text-gray-300">Our facilities meet the highest industry standards</p>
           </div>
