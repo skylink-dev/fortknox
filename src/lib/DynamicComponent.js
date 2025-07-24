@@ -26,6 +26,8 @@ import PricingPlansTable from '@/components/section/PricingPlanTable'
 import DataCenterHero from '@/components/HeroComponent'
 import TechnicalSpecs from '@/components/TechnicalSpecs'
 import DataCenterTestimonials from '@/components/DataCenterTestimonials'
+import FullWidthCard from '@/components/section/FullWidthCard'
+import DynamicGrid4 from '@/components/section/DynamicGrid4'
 
 
 export default function DynamicComponent({ data, id }) {
@@ -86,6 +88,10 @@ export default function DynamicComponent({ data, id }) {
             return <TechnicalSpecs></TechnicalSpecs>
         case "datacentertestimonials":
             return <DataCenterTestimonials></DataCenterTestimonials>
+        case "fullwidthcard":
+            return <FullWidthCard></FullWidthCard>
+        case "dynamicgrid4":
+            return <DynamicGrid4></DynamicGrid4>
         default:
             return null;
     }

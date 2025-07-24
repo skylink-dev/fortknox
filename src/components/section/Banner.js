@@ -2,7 +2,7 @@ import React from 'react';
 export default function Banner({data}) {
     return (
         <section
-            className="Banner relative bg-cover bg-center bg-no-repeat h-[calc(100vh-64px)] flex items-center text-white"
+            className="Banner relative bg-cover bg-center bg-no-repeat h-[calc(100vh-110px)] flex items-center text-white rounded-2xl my-4 mx-4"
             style={{
                 backgroundImage: `url(${data.image})`,
             }}

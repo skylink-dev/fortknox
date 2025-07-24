@@ -1,83 +1,49 @@
 'use client'
 import React from 'react';
 import { motion } from 'framer-motion';
+import CloseIcon from '@mui/icons-material/Close';
+import DoneIcon from '@mui/icons-material/Done';
+import Link from 'next/link';
+import EastIcon from '@mui/icons-material/East';
+import Image from 'next/image';
 
 const specs = [
-  { 
-    category: 'Power', 
+  {
+    category: 'Old-School Struggles',
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
       </svg>
     ),
     items: [
-      '2N redundant UPS systems',
-      'N+1 diesel generators',
-      '72-hour fuel supply',
-      'Dual grid power feeds'
+      'Manually logging hours',
+      'Juggling multiple tools',
+      'Missing out on insights',
+      'Tedious reporting'
     ],
-    color: 'bg-gradient-to-br from-red-500 to-red-600'
+    color: 'bg-gradient-to-br from-gray-400 to-gray-500'
   },
-  { 
-    category: 'Cooling', 
+  {
+    category: 'New-School Solutions',
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
       </svg>
     ),
     items: [
-      'N+2 precision cooling',
-      'Hot/cold aisle containment',
-      '25°C optimized environment',
-      'Waterless fire suppression'
-    ],
-    color: 'bg-gradient-to-br from-red-500 to-red-600'
-  },
-  { 
-    category: 'Security', 
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-      </svg>
-    ),
-    items: [
-      'Biometric access controls',
-      '24/7 armed security',
-      'Mantrap entry systems',
-      'Full CCTV coverage'
-    ],
-    color: 'bg-gradient-to-br from-red-500 to-red-600'
-  },
-  { 
-    category: 'Network', 
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
-      </svg>
-    ),
-    items: [
-      'Multiple tier-1 carriers',
-      '100Gbps+ backbone',
-      'Diverse fiber paths',
-      '<1ms latency to major IXPs'
+      'All-in-one time tracking',
+      'Automatic time entries',
+      'Smart insights with AI',
+      'Instant updates across devices'
     ],
     color: 'bg-gradient-to-br from-red-500 to-red-600'
   }
 ];
-
-const certifications = [
-  { name: 'Tier IV', icon: '🏆' },
-  { name: 'ISO 27001', icon: '🔒' },
-  { name: 'SOC 2 Type II', icon: '📊' },
-  { name: 'HIPAA', icon: '🏥' },
-  { name: 'PCI DSS', icon: '💳' },
-  { name: 'GDPR', icon: '🌐' }
-];
-
 const TechnicalSpecs = () => {
   return (
-    <section className="py-12 px-4 sm:px-6 lg:px-8 bg-gray-50" id="technical-specs">
-      <div className="max-w-7xl mx-auto">
+    <section className="px-4 sm:px-6 lg:px-8 bg-gray-50" id="technical-specs">
+            <div className="h-[80px]"></div>
+      <div className=" max-w-[1080px] mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -86,14 +52,10 @@ const TechnicalSpecs = () => {
           className="text-center mb-8"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Technical <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-600">Specifications</span>
+            Out with the old,<span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-600"> in with the new.</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Enterprise-grade infrastructure built for maximum reliability and performance
-          </p>
         </motion.div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 mb-4">
           {specs.map((spec, index) => (
             <motion.div
               key={index}
@@ -102,20 +64,16 @@ const TechnicalSpecs = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
               whileHover={{ y: -5 }}
-              className="bg-white rounded-xl overflow-hidden duration-300"
+              className={`rounded-xl overflow-hidden duration-300 ${index === 0 ? "bg-red-100" : "bg-red-600"} `}
             >
-              <div className={`${spec.color} h-2 w-full`}></div>
               <div className="p-6">
-                <div className={`w-16 h-16 ${spec.color.replace('bg-gradient-to-br', 'bg')} rounded-lg flex items-center justify-center text-white mb-4`}>
-                  {spec.icon}
+                <div className="rounded-lg flex items-center justify-center text-white mb-4 gap-4">
+                  <h3 className={`text-2xl font-bold ${index === 0 ? "text-black" : "text-white"} `}>{spec.category}</h3>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{spec.category}</h3>
-                <ul className="space-y-3">
+                <ul className="space-y-3 bg-white rounded-lg p-5">
                   {spec.items.map((item, itemIndex) => (
-                    <li key={itemIndex} className="flex items-start">
-                      <svg className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
+                    <li key={itemIndex} className="flex items-center gap-4 py-1">
+                      <div className={`${index === 0 ? "bg-gray-500" : "bg-red-500"} text-white text-xl w-8 h-8 flex items-center justify-center rounded-full border border-black`}>  {index === 0 ? <CloseIcon fontSize="small" /> : <DoneIcon fontSize="small" />}</div>
                       <span className="text-gray-700">{item}</span>
                     </li>
                   ))}
@@ -124,7 +82,6 @@ const TechnicalSpecs = () => {
             </motion.div>
           ))}
         </div>
-
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -132,26 +89,24 @@ const TechnicalSpecs = () => {
           viewport={{ once: true }}
           className="bg-white rounded-xl shadow-lg overflow-hidden"
         >
-          <div className="bg-gradient-to-r from-red-800 to-red-600 p-8 text-white">
-            <h3 className="text-2xl font-bold mb-2">Compliance & Certifications</h3>
-            <p className="text-gray-300">Our facilities meet the highest industry standards</p>
-          </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 p-8">
-            {certifications.map((cert, index) => (
-              <motion.div
-                key={index}
-                whileHover={{ scale: 1.05 }}
-                className="flex flex-col items-center text-center"
-              >
-                <div className="w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center text-2xl mb-3">
-                  {cert.icon}
-                </div>
-                <span className="font-medium text-gray-900">{cert.name}</span>
-              </motion.div>
-            ))}
+          <div className="bg-black px-12 py-16 text-white add-noise">
+            <div className='content-wrap'>
+            <h3 className="text-4xl font-bold mb-2">Be a Goal-getter.</h3>
+            <p className="text-3xl text-white">Now its easy to show how awesome you are at your job.</p>
+            <Link href="#" className="mt-5 inline-block px-5 py-3 rounded-lg text-white font-medium shadow-md transition hover:scale-105" style={{
+              background: 'linear-gradient(100deg, #40ddff -6.08%, #7612fa 25.08%, #fa12e3)'
+            }}>Get Started. It is Free 
+            <EastIcon></EastIcon>
+            </Link>
+            </div>
+            <div className="image-wrap">
+              <Image src="/assets/glow-vector.png" width={1200} height={600} alt="glow-vector"></Image>
+              <Image src="/assets/noise-wide.png" width={1200} height={600} alt="glow-vector"></Image>
+            </div>
           </div>
         </motion.div>
       </div>
+      <div className="h-[80px]"></div>
     </section>
   );
 };
