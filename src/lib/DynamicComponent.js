@@ -28,6 +28,10 @@ import TechnicalSpecs from '@/components/TechnicalSpecs'
 import DataCenterTestimonials from '@/components/DataCenterTestimonials'
 import FullWidthCard from '@/components/section/FullWidthCard'
 import DynamicGrid4 from '@/components/section/DynamicGrid4'
+import FullWidthRILC from '@/components/section/FullWidthRILC'
+import MultipleButton from '@/components/section/MultipleButton'
+import RightIconLeftContent from '@/components/section/RightIconLeftContent'
+import SliderContainer from '@/components/section/SliderContainer'
 
 
 export default function DynamicComponent({ data, id }) {
@@ -92,6 +96,14 @@ export default function DynamicComponent({ data, id }) {
             return <FullWidthCard></FullWidthCard>
         case "dynamicgrid4":
             return <DynamicGrid4></DynamicGrid4>
+        case "fullwidthrilc":
+            return <FullWidthRILC></FullWidthRILC>
+        case "multiplebutton":
+            return <MultipleButton></MultipleButton>
+        case "righticonleftcontent":
+            return <RightIconLeftContent></RightIconLeftContent>
+        case "columnslider":
+            return <SliderContainer></SliderContainer>
         default:
             return null;
     }

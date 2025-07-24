@@ -24,7 +24,7 @@ export default function ContactUs() {
                     className=""
                   >
                     <h2 className="text-2xl font-semibold text-gray-800">
-                      Got questions? <span className="text-red-600">We're all ears!</span>
+                      Got questions? <span className="text-red-600">We are all ears!</span>
                     </h2>
                     {/* Business Name */}
                     <div>

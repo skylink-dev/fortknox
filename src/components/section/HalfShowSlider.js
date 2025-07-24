@@ -48,7 +48,7 @@ export default function HalfShowCarousel({ slides = [] }) {
   if (!baseSlides.length) return null; // safeguard
 
   return (
-    <section className="w-full pt-3 pb-8">
+    <section className="w-full pt-3 pb-5">
       <div className="relative overflow-hidden max-w-[100vw] px-4">
         <div
           ref={trackRef}

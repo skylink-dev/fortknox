@@ -16,8 +16,8 @@ export default function VideoBanner({ data }) {
 
   return (
     <>
-      <div className="h-[110px]"></div>
-      <section className="relative h-[800px] overflow-hidden bg-black container mx-auto rounded-lg">
+      <div className="h-[100px]"></div>
+      <section className="relative h-[600px] overflow-hidden bg-black container mx-auto rounded-lg">
         <div
           className="absolute inset-0 bg-cover bg-center z-0"
           style={{ backgroundImage: `url('${data.image}')` }}
@@ -53,41 +53,40 @@ export default function VideoBanner({ data }) {
         <AnimatePresence>
           {showContent && (
             <motion.div
-              className="relative z-10 container mx-auto flex flex-wrap items-center justify-center h-full text-white px-4"
+              className="relative z-10 container mx-auto flex flex-wrap items-end justify-start h-full text-white px-4"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 1 }}
             >
-              <div className="w-full md:w-1/2 flex items-center justify-center mb-8 md:mb-0">
-              </div>
-              {showContent && (
-                <button
-                  onClick={handlePlay}
-                  aria-label="Play Video"
-                  className="absolute z-10 inset-0 m-auto w-16 h-16 bg-white/80 rounded-full flex items-center justify-center"
-                >
-                  <svg viewBox="0 0 24 24" fill="black" width="32" height="32">
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </button>
-              )}
-              <div className="w-full md:w-2/3 text-center md:text-center py-10">
+            
+              <div className="w-full md:w-2/3 text-left md:text-left py-10 pl-10">
                 <p className="text-lg sm:text-xl font-semibold uppercase tracking-widest">
                   {data.sub_title}
                 </p>
                 <h1 className="mt-2 mb-4 text-4xl sm:text-5xl font-bold leading-tight">
                   {data.title}
                 </h1>
-                <p className="text-center sm:text-lg leading-relaxed max-w-2xl mx-auto">
+                <p className="text-left sm:text-lg leading-relaxed mx-auto">
                   {data.description}
                 </p>
               </div>
+              {showContent && (
+                <button
+                  onClick={handlePlay}
+                  aria-label="Play Video"
+                  className="z-10 inset-0 m-auto w-16 h-16 bg-white/80 rounded-full flex items-center justify-center"
+                >
+                  <svg viewBox="0 0 24 24" fill="black" width="32" height="32">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </button>
+              )}
             </motion.div>
           )}
         </AnimatePresence>
       </section>
-      <div className="h-[110px]"></div>
+      <div className="h-[100px]"></div>
     </>
   );
 }

@@ -11,7 +11,7 @@ const bannerImages = [
   { id: 5, src: '/assets/powering-digital-growth-with-smart-infrastructure-data-center.jpg', alt: 'Banner 5' },
 ];
 
-export default function SingleBanner({data}) {
+export default function SingleBanner({ data }) {
   console.log(data);
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -26,7 +26,7 @@ export default function SingleBanner({data}) {
   return (
     <section className="px-4 lg:px-20 mb-12 scroll-my-20 pt-6">
       <div className="bg-red-600 grid md:grid-cols-2 gap-10 max-w-screen-2xl mx-auto rounded-2xl items-center px-6 py-20 lg:p-36 linear-gradient">
-        
+
         {/* Auto Slider Section */}
         <div className="relative w-full h-120 overflow-hidden rounded-xl">
           {bannerImages.map((img, index) => (
@@ -36,9 +36,8 @@ export default function SingleBanner({data}) {
               alt={img.alt}
               width={400}
               height={400}
-              className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 rounded-xl ${
-                index === currentIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
-              }`}
+              className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 rounded-xl ${index === currentIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                }`}
             />
           ))}
         </div>
@@ -50,7 +49,7 @@ export default function SingleBanner({data}) {
             {data.title}
             <span className="absolute -top-2 ml-2 w-6 h-6 bg-gradient-to-br from-purple-400 to-pink-300 rounded-full blur-sm" />
           </h2>
-          <h5 className="text-purple-200 text-lg max-w-xl mb-6 text-[24px]">
+          <h5 className="text-white text-lg max-w-xl mb-6 text-[24px]">
             {data.description}
           </h5>
 

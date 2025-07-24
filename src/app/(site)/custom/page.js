@@ -536,9 +536,9 @@ export default function Page() {
               <h1 className="text-4xl font-bold text-black mb-4">
                 Ready to take your <br /> first step <span className="text-red-600">today ?</span>
               </h1>
-                          <div className="support-img-container">
-              <Image src="/assets/support.png" width={1200} height={900} alt="contact"></Image>
-            </div>
+              <div className="support-img-container">
+                <Image src="/assets/support.png" width={1200} height={900} alt="contact"></Image>
+              </div>
             </div>
             <div className="w-full lg:w-1/2">
               <form
@@ -547,7 +547,7 @@ export default function Page() {
                 className=""
               >
                 <h2 className="text-2xl font-semibold text-gray-800">
-                  Got questions? <span className="text-red-600">We're all ears!</span>
+                  Got questions? <span className="text-red-600">We are all ears!</span>
                 </h2>
                 {/* Business Name */}
                 <div>
@@ -644,6 +644,25 @@ export default function Page() {
         </div>
         <div className="h-[110px]"></div>
       </section>
+      <section id="right-image-fullwidth-section" style={{ backgroundImage: 'url("/assets/sample-6.jpg")' }}>
+        <div className="h-[130px]"></div>
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col lg:flex-row items-stretch gap-16 justify-between p-10 rounded-3xl overflow-hidden">
+            <div className="w-full lg:w-1/2 text-black flex flex-col justify-start h-auto">
+            </div>
+            <div className="w-full lg:w-1/2 text-black flex flex-col justify-start h-auto pl-12">
+              <h2 className="text-white text-4xl font-bold ledding-normal">Forknox powers <br /> modern cloud infrastructure and <br /> secure data centers.</h2>
+              <p className="text-white mt-5">Scalable, high-performance solutions designed for enterprises, tech teams, and mission-critical workloads.</p>
+                <div className="mt-5">
+                          <Link href="#" className='text-white  border-b-2 border-white text-[16px] inline-block'>
+                            Learn more
+                          </Link>
+                          <KeyboardArrowRightIcon className="text-white"></KeyboardArrowRightIcon></div>
+                      </div>
+            </div></div>
+        <div className="h-[130px]"></div>
+      </section>
+
     </>
   )
 }
